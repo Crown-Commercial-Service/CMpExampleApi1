@@ -5,6 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Spring supplied example that returns a simple request counter and a greeting message.
+ *
+ * An optional 'name' parameter can be supplied.
+ */
 @RestController
 public class GreetingController {
 
