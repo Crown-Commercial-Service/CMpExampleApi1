@@ -21,10 +21,15 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class SystemInfoController {
 
+    // Simple counter incremented for each request
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/systeminfo")
     public SystemInfo systeminfo(@RequestParam(value="detail", defaultValue="false") String detail) {
+
+        System.out.println(ApiConfig.getApiConfig().getApiURL("api1"));
+        System.out.println(ApiConfig.getApiConfig().isFeatureEnabled("EG1"));
+
         return new SystemInfo(counter.incrementAndGet(), detail );
     }
 }

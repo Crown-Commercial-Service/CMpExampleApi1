@@ -37,6 +37,10 @@ public class SystemInfo {
         return new Date().toString();
     }
 
+    public ApiConfig getApiConfig() {
+        return ApiConfig.getApiConfig();
+    }
+
     public Properties getProperties() {
         if ( this.exposeProperties ) {
             return System.getProperties();
