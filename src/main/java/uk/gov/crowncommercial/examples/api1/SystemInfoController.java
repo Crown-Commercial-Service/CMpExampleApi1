@@ -27,9 +27,6 @@ public class SystemInfoController {
     @RequestMapping("/systeminfo")
     public SystemInfo systeminfo(@RequestParam(value="detail", defaultValue="false") String detail) {
 
-        System.out.println(ApiConfig.getApiConfig().getApiURL("api1"));
-        System.out.println(ApiConfig.getApiConfig().isFeatureEnabled("EG1"));
-
         return new SystemInfo(counter.incrementAndGet(), detail );
     }
 }

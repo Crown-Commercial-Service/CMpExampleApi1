@@ -37,7 +37,8 @@ public class SystemInfo {
         return new Date().toString();
     }
 
-    public ApiConfig getApiConfig() {
+    public ApiConfig getApiConfig()
+    {
         return ApiConfig.getApiConfig();
     }
 
@@ -57,4 +58,25 @@ public class SystemInfo {
             return null;
         }
     }
+
+    public int getAvailableProcessors() {
+
+        return Runtime.getRuntime().availableProcessors();
+    }
+
+    public long getTotalMemory() {
+
+        return Runtime.getRuntime().totalMemory();
+    }
+
+    public long getMaxMemory() {
+
+        return Runtime.getRuntime().maxMemory();
+    }
+
+    public long getFreeMemory() {
+
+        return Runtime.getRuntime().freeMemory();
+    }
+
 }
