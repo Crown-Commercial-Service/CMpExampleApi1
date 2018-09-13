@@ -15,4 +15,3 @@ The maven file include the Spotify Docker plugin. The docker images can be build
 
 mvn install dockerfile:build
 
-
