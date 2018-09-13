@@ -9,7 +9,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.image.prefix>urere</docker.image.prefix>
+        <docker.image.prefix>ccs</docker.image.prefix>
         <docker.image.name>api1</docker.image.name>
     </properties>
 
