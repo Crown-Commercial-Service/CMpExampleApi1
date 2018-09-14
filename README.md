@@ -1,6 +1,6 @@
 # Example Api Project #
 
-This is a small example that uses Java and Springboot to provision a simple REST api. It uses the Maven build system and makes use of the Spotify Docker plugin.
+This is a small example that uses Java and Springboot to provision a simple REST api. It uses the Maven build system and the Spotify Docker plugin.
 
 The api will listen for requests on **port 8080**. Note that this is the port number the build pipe lines will use when defining the ECS tasks and load balancer rules. Changing the api to use a different port will result in incorrect deployment of the resulting container.
 
@@ -17,7 +17,7 @@ It will respond to the following requests:
 Note that the `systeminfo` requests can return detailed Java system property and environment variable information. Care should to taken to ensure this is only deployed for development purposes.
 
 ## Local Execution ##
-Because the example api uses Java it needs to be compiled, a jar file file created and, ultimately, a Docker image created. To do this a Java JDK, and Apache Maven need to be installed and configured. The Dockerfile specifies OpenJDK version 8.
+Because the example api uses Java it needs to be compiled, a jar file file created and, ultimately, a Docker image produced. To do this a Java JDK, and Apache Maven need to be installed and configured. The Dockerfile specifies OpenJDK version 8.
 
 To build and execute locally execute:
 
@@ -26,13 +26,13 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-This will start the api on port `8080`. The run a different port, for example `18080` use:
+This will start the api on port `8080`. The run on a different port, for example `18080` use:
 
 ```
 mvn -Dserver.port=18080 spring-boot:run
 ```
 
-You may wish to use a different port when use an application and api are being run locally. See the example application repository, `CCSExampleApp1`.
+You may wish to use a different port when an application and api are being run locally. See the example application repository, `CCSExampleApp1`.
 
 Now the api is running locally it is possible make requests to it, for example using curl:
 
