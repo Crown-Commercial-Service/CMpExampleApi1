@@ -1,6 +1,6 @@
 # Minimal Dockerfile for a Java Springboot application
 # Note that this is using Java 8
-# Memory settings and garbase collection settings are more important with this version dues to how
+# Memory settings and garbase collection settings are more important with this version due to how
 # Java determines the number of Garbage collection threads
 FROM openjdk:8-jdk-alpine
 
