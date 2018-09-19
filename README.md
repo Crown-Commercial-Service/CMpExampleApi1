@@ -2,7 +2,7 @@
 
 This is a small example that uses Java and Springboot to provision a simple REST api. It uses the Maven build system and the Spotify Docker plugin.
 
-The api will listen for requests on **port 8080**. Note that this is the port number the build pipe lines will use when defining the ECS tasks and load balancer rules. Changing the api to use a different port will result in incorrect deployment of the resulting container.
+The api will listen for requests on **port 8080**. Note that this is the port number that the build pipelines will use when defining the ECS tasks and load balancer rules. Changing the api to use a different port will result in incorrect deployment of the resulting container.
 
 It will respond to the following requests:
 
