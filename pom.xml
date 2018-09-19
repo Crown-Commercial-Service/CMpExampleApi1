@@ -54,6 +54,9 @@
                     <repository>${docker.image.prefix}/${docker.image.name}</repository>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                        <GIT_OWNER>${docker.git.owner}</GIT_OWNER>
+                        <GIT_REPO>${docker.git.repo}</GIT_REPO>
+                        <GIT_BRANCH>${docker.git.branch}</GIT_BRANCH>
                         <GIT_COMMIT>${docker.git.commit}</GIT_COMMIT>
                     </buildArgs>
                 </configuration>
