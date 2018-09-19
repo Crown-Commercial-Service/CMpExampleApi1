@@ -15,6 +15,7 @@
         <docker.git.repo></docker.git.repo>
         <docker.git.branch>master</docker.git.branch>
         <docker.git.commit></docker.git.commit>
+        <docker.codebuild.time></docker.codebuild.time>
     </properties>
 
     <parent>
@@ -58,6 +59,7 @@
                         <GIT_REPO>${docker.git.repo}</GIT_REPO>
                         <GIT_BRANCH>${docker.git.branch}</GIT_BRANCH>
                         <GIT_COMMIT>${docker.git.commit}</GIT_COMMIT>
+                        <BUILD_TIME>${docker.codebuild.time}</BUILD_TIME>
                     </buildArgs>
                 </configuration>
             </plugin>
