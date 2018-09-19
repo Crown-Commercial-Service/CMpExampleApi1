@@ -4,6 +4,10 @@
 # Java determines the number of Garbage collection threads
 FROM openjdk:8-jdk-alpine
 
+# Build information
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
+
 ARG JAR_FILE
 COPY ${JAR_FILE} ./app.jar
 

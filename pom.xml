@@ -11,6 +11,7 @@
         <java.version>1.8</java.version>
         <docker.image.prefix>ccs</docker.image.prefix>
         <docker.image.name>api1</docker.image.name>
+        <docker.git.commit>notset</docker.git.commit>
     </properties>
 
     <parent>
@@ -50,6 +51,7 @@
                     <repository>${docker.image.prefix}/${docker.image.name}</repository>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                        <GIT_COMMIT>
                     </buildArgs>
                 </configuration>
             </plugin>
