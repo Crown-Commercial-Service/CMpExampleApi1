@@ -11,7 +11,10 @@
         <java.version>1.8</java.version>
         <docker.image.prefix>ccs</docker.image.prefix>
         <docker.image.name>api1</docker.image.name>
-        <docker.git.commit>notset</docker.git.commit>
+        <docker.git.owner></docker.git.owner>
+        <docker.git.repo></docker.git.repo>
+        <docker.git.branch>master</docker.git.branch>
+        <docker.git.commit></docker.git.commit>
     </properties>
 
     <parent>
