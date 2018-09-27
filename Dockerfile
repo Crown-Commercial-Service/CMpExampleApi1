@@ -2,6 +2,11 @@
 # Note that this is using Java 8
 # Memory settings and garbase collection settings are more important with this version due to how
 # Java determines the number of Garbage collection threads
+# 
+# The API was tested using JDK 11 (openjdk:11-jdk-slim).
+# This works but a reflection warning is generated, the image is also considerably
+# larger than the alpine based images.
+#
 FROM openjdk:8-jdk-alpine
 
 # Build information
