@@ -13,6 +13,8 @@ It will respond to the following requests:
 - /systeminfo?detail=all
 - /systeminfo?detail=properties
 - /systeminfo?detail=environment
+- /messages
+- /messages/add?name=hello&message=Hello
 
 Note that the `systeminfo` requests can return detailed Java system property and environment variable information. Care should to taken to ensure this is only deployed for development purposes.
 
