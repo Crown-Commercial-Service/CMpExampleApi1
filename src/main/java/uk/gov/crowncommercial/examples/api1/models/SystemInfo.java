@@ -1,4 +1,6 @@
-package uk.gov.crowncommercial.examples.api1;
+package uk.gov.crowncommercial.examples.api1.models;
+
+import uk.gov.crowncommercial.examples.api1.ApiConfig;
 
 import java.util.Date;
 import java.util.Map;

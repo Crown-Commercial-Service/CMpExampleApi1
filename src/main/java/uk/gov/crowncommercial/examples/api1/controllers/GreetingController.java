@@ -1,9 +1,10 @@
-package uk.gov.crowncommercial.examples.api1;
+package uk.gov.crowncommercial.examples.api1.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import uk.gov.crowncommercial.examples.api1.models.Greeting;
 
 /**
  * Spring supplied example that returns a simple request counter and a greeting message.

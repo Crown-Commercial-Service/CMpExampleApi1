@@ -1,8 +1,9 @@
-package uk.gov.crowncommercial.examples.api1;
+package uk.gov.crowncommercial.examples.api1.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import uk.gov.crowncommercial.examples.api1.models.SystemInfo;
 
 import java.util.concurrent.atomic.AtomicLong;
 

@@ -17,6 +17,16 @@ import java.util.Map;
  * CCS_APP_PROTOCOL
  *      APP protocol, 'http' or 'https'
  *
+ * Connection information is also supplied for the default database
+ * CCS_DEFAULT_DB_URL
+ *      JDBC style URL for database connection
+ * CCS_DEFAULT_DB_USER
+ *      Default database user name
+ * CCS_DEFAULT_DB_PASSWORD
+ *      Default database password
+ *
+ * If no environment variables are specified the database will default to an in-memory H2 implementation
+ *
  * Features swtiches can also be specified with the prefx CCS_FEATURE_
  * The value must be 'on', 'off', 'enabled', 'disabled', 'true' or 'false'.
  *
@@ -32,6 +42,9 @@ public class ApiConfig {
     private static final String ENV_API_PROTOCOL = "CCS_API_PROTOCOL";
     private static final String ENV_APP_BASE_URL = "CCS_APP_BASE_URL";
     private static final String ENV_APP_PROTOCOL = "CCS_APP_PROTOCOL";
+    private static final String ENV_DB_URL = "CCS_DEFAULT_DB_URL";
+    private static final String ENV_DB_USERNAME = "CCS_DEFAULT_DB_USER";
+    private static final String ENV_DB_PASSWORD = "CCS_DEFAULT_DB_PASSWORD";
     private static final String ENV_FEATURE_PREFIX = "CCS_FEATURE_";
 
     /**
@@ -71,6 +84,22 @@ public class ApiConfig {
     private String apiBaseURL = "ccsdev-internal.org";
 
     /**
+     * JDBC connection string style URL for connecting to the default
+     * Database
+     */
+    private String defaultDatabaseURL = "jdbc:h2:mem:defaultdb";
+
+    /**
+     * User name for accessing the default database
+     */
+    private String defaultDatabaseUsername = "";
+
+    /**
+     * Password for accessing the default database
+     */
+    private String defaultDatabasePassword = "";
+
+    /**
      * Map of boolean flags indicating what features are enabled
      */
     private Map<String,Boolean> featureInfo = new HashMap<String,Boolean>();
@@ -93,6 +122,12 @@ public class ApiConfig {
                 appBaseURL = env.get(ev).trim();
             } else if ( evTest.equals(ENV_APP_PROTOCOL) ) {
                 appProtocol = env.get(ev).trim();
+            } else if ( evTest.equals(ENV_DB_URL) ) {
+                defaultDatabaseURL = env.get(ev).trim();
+            } else if ( evTest.equals(ENV_DB_USERNAME) ) {
+                defaultDatabaseUsername = env.get(ev).trim();
+            } else if ( evTest.equals(ENV_DB_PASSWORD) ) {
+                defaultDatabasePassword = env.get(ev).trim();
             } else if ( evTest.startsWith(ENV_FEATURE_PREFIX) ) {
 
                     // Determine if the feature is enabled
@@ -169,4 +204,36 @@ public class ApiConfig {
         return apiBaseURL;
     }
 
+    /**
+     *
+     * @return True if there appears to be valid default database connection details
+     */
+    boolean isDefaultDatabaseAvailable() {
+
+        return ((defaultDatabaseURL == null) || (defaultDatabaseURL.length() == 0)) ? false : true;
+    }
+
+    /**
+     *
+     * @return JDBC style connection URL for the default database
+     */
+    public String getDefaultDatabaseURL() {
+        return defaultDatabaseURL;
+    }
+
+    /**
+     *
+     * @return User name for the default database
+     */
+    public String getDefaultDatabaseUsername() {
+        return defaultDatabaseUsername;
+    }
+
+    /**
+     *
+     * @return Password for the default database
+     */
+    public String getDefaultDatabasePassword() {
+        return defaultDatabasePassword;
+    }
 }

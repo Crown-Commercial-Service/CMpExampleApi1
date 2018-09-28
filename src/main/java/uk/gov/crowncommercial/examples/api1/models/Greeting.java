@@ -1,4 +1,4 @@
-package uk.gov.crowncommercial.examples.api1;
+package uk.gov.crowncommercial.examples.api1.models;
 
 public class Greeting {
 
