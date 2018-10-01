@@ -34,7 +34,7 @@ This will start the api on port `8080`. The run on a different port, for example
 mvn -Dserver.port=18080 spring-boot:run
 ```
 
-You may wish to use a different port when an application and api are being run locally. See the example application repository, `CCSExampleApp1`.
+You may wish to use a different port when an application and api are being run locally. See the example application repository, `CMpExampleApp1`.
 
 Now the api is running locally it is possible make requests to it, for example using curl:
 
@@ -43,7 +43,7 @@ Now the api is running locally it is possible make requests to it, for example u
 will return a JSON object like: `{"id":1,"content":"Hello, World!"}`.
 
 ## Build Pipeline ##
-The corresponding example build pipeline project is in the `CCSDevEnvironment` repository as `/terraform/build/api1`. The pipeline currently needs to be stored within the `CCSDevEnvironment` repository because it requires access to various Terraform modules.
+The corresponding example build pipeline project is in the `CMpDevEnvironment` repository as `/terraform/build/api1`. The pipeline currently needs to be stored within the `CMpDevEnvironment` repository because it requires access to various Terraform modules.
 
 ## Dockerfile ##
 The project includes a simple Docker file, this is used by the build pipeline to generate the container image. It is a standard file for a Java Springboot based project. It must expose port 8080. The name of the container image is defined in the Maven `pom.xml` file. For the example it is `ccs/api1`.
