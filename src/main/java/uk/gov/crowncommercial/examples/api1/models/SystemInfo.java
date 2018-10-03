@@ -3,6 +3,7 @@ package uk.gov.crowncommercial.examples.api1.models;
 import uk.gov.crowncommercial.examples.api1.ApiConfig;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
@@ -55,7 +56,19 @@ public class SystemInfo {
     public Map<String,String> getEnvironment() {
 
         if ( this.exposeEnv ) {
-            return System.getenv();
+
+            Map<String,String> sanitizedEnv = new HashMap<String,String>();
+
+            // Hide any password environment variables that may have been passed to the container.
+            for  ( String envName : System.getenv().keySet() ) {
+                if ( envName.endsWith("PASSWORD") ) {
+                    sanitizedEnv.put( envName, "********" );
+                } else {
+                    sanitizedEnv.put( envName, System.getenv( envName ) );
+                }
+            }
+
+            return sanitizedEnv;
         } else {
             return null;
         }
