@@ -111,28 +111,48 @@ public class ApiConfig {
 
         // Read what we can from the environment
         Map<String,String> env = System.getenv();
+
         for ( String ev : env.keySet() ) {
+
+            String value = env.get(ev);
+            if (value == null || value.equals("_")) {
+                value = "";
+            }
 
             String evTest = ev.toUpperCase().trim();
             if ( evTest.equals(ENV_API_BASE_URL) ) {
-                apiBaseURL = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    apiBaseURL = value.trim();
+                }
             } else if ( evTest.equals(ENV_API_PROTOCOL) ) {
-                apiProtocol = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    apiProtocol = value.trim();
+                }
             } else if ( evTest.equals(ENV_APP_BASE_URL) ) {
-                appBaseURL = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    appBaseURL = value.trim();
+                }
             } else if ( evTest.equals(ENV_APP_PROTOCOL) ) {
-                appProtocol = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    appProtocol = value.trim();
+                }
             } else if ( evTest.equals(ENV_DB_URL) ) {
-                defaultDatabaseURL = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                   defaultDatabaseURL = value.trim();
+                }
             } else if ( evTest.equals(ENV_DB_USERNAME) ) {
-                defaultDatabaseUsername = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    defaultDatabaseUsername = value.trim();
+                }
             } else if ( evTest.equals(ENV_DB_PASSWORD) ) {
-                defaultDatabasePassword = env.get(ev).trim();
+                if (value.trim().length() > 0) {
+                    defaultDatabasePassword = value.trim();
+                }
             } else if ( evTest.startsWith(ENV_FEATURE_PREFIX) ) {
 
                     // Determine if the feature is enabled
                     String featureName = evTest.substring( ENV_FEATURE_PREFIX.length() );
-                    String val = env.get(ev).toUpperCase().trim();
+                    String val = value.toUpperCase().trim();
                     boolean enabled = false;
                     if ( (val.equals("ON")) || (val.equals("ENABLED")) || val.equals("TRUE") || val.equals("YES") ) {
                         enabled = true;
