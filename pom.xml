@@ -76,7 +76,7 @@
                         <GIT_BRANCH>${docker.git.branch}</GIT_BRANCH>
                         <GIT_COMMIT>${docker.git.commit}</GIT_COMMIT>
                         <BUILD_TIME>${docker.codebuild.time}</BUILD_TIME>
-                        <VERSION>${docker.code.version}</VERSION>
+                        <CCS_VERSION>${docker.code.version}</CCS_VERSION>
                     </buildArgs>
                 </configuration>
             </plugin>
