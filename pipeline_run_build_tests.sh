@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mvn test
+mvn --fail-fast test verify
