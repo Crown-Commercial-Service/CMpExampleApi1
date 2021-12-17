@@ -11,11 +11,11 @@
         <java.version>1.8</java.version>
         <docker.image.prefix>ccs</docker.image.prefix>
         <docker.image.name>api1</docker.image.name>
-        <docker.git.owner></docker.git.owner>
-        <docker.git.repo></docker.git.repo>
+        <docker.git.owner/>
+        <docker.git.repo/>
         <docker.git.branch>master</docker.git.branch>
-        <docker.git.commit></docker.git.commit>
-        <docker.codebuild.time></docker.codebuild.time>
+        <docker.git.commit/>
+        <docker.codebuild.time/>
         <docker.code.version>0.0.1</docker.code.version>
     </properties>
 
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.5</version>
+            <version>42.3.1</version>
         </dependency>
     </dependencies>
 
